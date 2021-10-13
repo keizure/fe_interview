@@ -1,61 +1,37 @@
 // 大数相加
 
 function bigAdd(a, b) {
-  let base = 4;
-  let bigNum = 10 ** 4;
   let res = [];
   function parse(num) {
-    let cache = [];
-    let result = [];
-    num
-      .split("")
-      .reverse()
-      .forEach((n) => {
-        cache.unshift(n);
-        if (cache.length === base) {
-          result.push(cache.join(""));
-          cache = [];
-        }
-      });
-    if (cache.length) {
-      result.push(cache.join(""));
-    }
-    return result;
+    return num.split("").reverse();
   }
   let parsedA = parse(a);
   let parsedB = parse(b);
   let add = 0;
   for (let i = 0; i < parsedA.length; i++) {
-    let currentA = parseInt(parsedA[i]);
-    let currentB = parseInt(parsedB[i]);
-    if (!currentA || !currentB) {
-      currentA ? res.push(currentA + add) : res.push(currentB + add);
-      continue;
-    }
+    let currentA = parseInt(parsedA[i]) || 0;
+    let currentB = parseInt(parsedB[i]) || 0;
     let result = currentA + currentB + add;
-    if (result >= bigNum) {
+    if (result >= 10) {
       add = 1;
-      res.push(result - bigNum);
+      res.push(result - 10);
     } else {
       add = 0;
       res.push(result);
     }
   }
-  console.log(res);
-  return res
-    .map((num) => {
-      console.log(num);
-      num = String(num);
-      let length = num.length;
-      if (length === base) return num;
-      let newnum =
-        Array(base - num.length)
-          .fill("0")
-          .join("") + num;
-      return newnum;
-    })
-    .reverse()
-    .join("");
+  if (add) res.push("1");
+  return res.map(String).reverse().join("");
 }
 
-console.log(bigAdd("99999", "123121"));
+console.log(bigAdd("999999", "1"));
+function test(a, b) {
+  let res1 = bigAdd(String(a), String(b));
+  let res2 = a + b;
+  if (parseInt(res1) === res2) {
+    console.log("success");
+  } else {
+    console.log("fail");
+  }
+}
+test(999, 22);

@@ -1,6 +1,5 @@
 ## 依赖收集
 ---
-
 ## nextTick
 ---
 `nextTick` 可以让我们在dom更新循环结束后执行回调，从而获得更新后的`DOM`
@@ -20,4 +19,6 @@ watch
 - 不支持缓存
 
 ### computed 缓存原理
+> [了解Vue中computed的缓存实现原理](https://segmentfault.com/a/1190000039781877)  
+
 初始化computed属性时，会新建一个watcher，并设置该watcher上的dirty属性为true，在获取watcher.value后会设置dirty为false，达成缓存的目的。在依赖更新后，会设置watcher的dirty属性为true，下次获取computed属性时就可以更新新值了。
