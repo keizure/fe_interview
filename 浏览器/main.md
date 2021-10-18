@@ -69,7 +69,7 @@ JavaScript 是运行在主线程之上的，因此，一旦执行垃圾回收算
   2. DOM Tree, CSSOM Tree 组合成 Render Tree（一些列矩形，具有字体、颜色、尺寸等视觉元素）
   3. layout (重排 Reflow) 将render tree 的节点布局在屏幕上的正确位置
   4. painting (重绘 Repaint) 
-- 解析HTML时，碰到js会立即停止HTML解析（CSS不会使HTML停止）执行js再返回控制权，同时也会阻塞CSS解析，整个解析进程都会等待js执行完之后才能够继续
+- 解析HTML时，碰到js会立即停止HTML,CSS解析（CSS不会使HTML停止）执行js再返回控制权，整个解析进程都会等待js执行完之后才能够继续
 - 外部css文件和图片的获取是异步的，不会影响HTML的加载
 
 ### CSS加载与解析
