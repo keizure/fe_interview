@@ -27,3 +27,17 @@ watch
 4. vuex
 5. $attrs, $listeners
 6. $parent, $children
+
+## vue 模版解析到渲染过程
+1. 获取用户编写的模版，及 `<template></template>`
+   1. 解析器生成AST
+   2. 优化器
+   3. 代码生成器生成render函数
+2. 模版编译生成render函数
+3. render函数执行返回新的虚拟DOM（vnode）
+4. 新老vnode做diff算法
+5. 将patch更新到老的dom上去
+6. 视图更新
+
+## 虚拟 DOM
+### DOM-diff

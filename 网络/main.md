@@ -42,4 +42,8 @@ document.domain = 'example.com'
 
 ## HTTP/2
 ### server push
+场景： 请求html后，需要再次请求js、css，通过server push，在请求html时，可以把js、css同时push到客户端，加快资源加载速度。
+使用方式：
+- 后端可使用 Link 的HTTP头
+- nginx 配置 http2_push 配置项
 ## HTTPS
