@@ -1,3 +1,4 @@
+// 1.写一个获取用户信息的方法
 function userInfo() {
   return new Promise((reslove, reject) => {
     setTimeout(() => {
@@ -35,6 +36,7 @@ function callbackLogin() {
   getUserinfo(permisionList);
 }
 
+// 2.写一个求根方法
 function ann(val, num, c) {
   // 求根, val为需要求根的值，num为几次幂，c为精确值（到小数点后哪一位）
   if (val === 1) return 1;

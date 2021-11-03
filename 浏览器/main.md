@@ -82,3 +82,7 @@ JavaScript 是运行在主线程之上的，因此，一旦执行垃圾回收算
 - DOMContentLoaded 在DOM树解析完后就触发，不需要等待**样式**  
 - onLoad 浏览器不仅加载完成了 HTML，还加载完成了所有外部资源：**图片，样式**等。
 - beforeunload/unload —— 当用户正在离开页面时
+
+## v8 排序的实现
+### 快排与插排 --7.0 之前
+### Tim sort --7.0 之后 
